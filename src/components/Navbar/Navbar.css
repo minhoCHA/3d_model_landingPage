@@ -1,0 +1,249 @@
+/* Global styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* Navbar styles */
+.navbar {
+    opacity: 1;
+    background-color: var(--black);
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 70px;
+    padding: 0 2.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header styles */
+.header {
+    height: 75px;
+
+    /* Logo styles */
+    #logo {
+        height: 100%;
+        float: left;
+        margin: 1em 3em;
+    }
+
+    /* Navigation list styles */
+    #navlist {
+        float: right;
+
+        /* List item styles */
+        li {
+            display: inline;
+            list-style-type: none;
+            padding-right: 20px;
+
+            /* Link styles */
+            a:link {
+                text-decoration: none;
+                line-height: 75px;
+                height: 75px;
+            }
+        }
+    }
+
+}
+
+/* CTA button styles */
+.button-cta-normal,
+.button-cta-animation {
+    overflow: hidden;
+    color: white;
+    position: relative;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.button-cta-animation {
+    transition: all 0.3s ease;
+    border-radius: 100px;
+
+    &.with-hover {
+        &:before {
+            /* Ripple effect animation */
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            transition: all 0.8s;
+            display: block;
+            margin: auto;
+            width: 0;
+            height: 0;
+            border-radius: 100px;
+            animation: ripple-animation 0.5s;
+            backdrop-filter: contrast(0.7);
+        }
+
+        &:hover:before {
+            /* Reverse ripple effect on hover */
+            width: 100%;
+            height: 100%;
+            animation: ripple-animation-reverse 0.5s;
+        }
+    }
+
+    &.with-ripple {
+        border: 2px solid #525bbf;
+        background: transparent;
+        color: #525bbf;
+
+        &:hover {
+            color: white;
+        }
+
+        &:before {
+            /* Ripple effect animation with custom color */
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            transition: all 0.8s;
+            background: #525bbf;
+            display: block;
+            margin: auto;
+            width: 0;
+            height: 0;
+            border-radius: 100px;
+            animation: ripple-animation 0.5s;
+            z-index: -1;
+        }
+
+        &:hover:before {
+            /* Reverse ripple effect on hover */
+            width: 100%;
+            height: 100%;
+            animation: ripple-animation-reverse 0.5s;
+        }
+    }
+
+    &.with-arrow {
+        padding: 15px 50px 15px 40px;
+
+        &:after {
+            /* Arrow animation styles */
+            content: "↓";
+            position: absolute;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &:hover {
+        /* Adjust padding on hover */
+        padding: 10px 25px;
+
+        &.with-arrow {
+            /* Adjust padding and arrow animation on hover */
+            padding: 10px 25px 10px 25px;
+
+            &:after {
+                animation: arrow-animation 0.3s ease;
+            }
+        }
+    }
+}
+
+/* Arrow animation keyframes */
+@keyframes arrow-animation {
+    0% {
+        bottom: 25%;
+    }
+
+    50% {
+        bottom: -25%;
+    }
+
+    51% {
+        bottom: 100%;
+    }
+
+    100% {
+        bottom: 25%;
+    }
+}
+
+/* Ripple effect keyframes */
+@keyframes ripple-animation {
+    0% {
+        width: 100%;
+        height: 100%;
+    }
+
+    12% {
+        width: 89%;
+        height: 89%;
+    }
+
+    24% {
+        width: 56%;
+        height: 56%;
+    }
+
+    36% {
+        width: 2%;
+        height: 25;
+    }
+
+    54% {
+        width: 25px;
+        height: 25px;
+    }
+
+    74% {
+        width: 5px;
+        height: 5px;
+    }
+
+    82% {
+        width: 10px;
+        height: 10px;
+    }
+
+    92% {
+        width: 2px;
+        height: 2px;
+    }
+
+    96% {
+        width: 5px;
+        height: 5px;
+    }
+
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+/* Reverse ripple effect keyframes */
+@keyframes ripple-animation-reverse {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    25% {
+        width: 25px;
+        height: 25px;
+    }
+
+    100% {
+        width: 100%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,64 @@
+/* Set fixed position and full dimensions for HTML, body, and #root */
+html,
+body,
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Reset body margin and apply font styles */
+body {
+  margin: 0;
+  font-family: 'poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #cdcbca;
+}
+
+/* Apply common styles to heading elements */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  text-transform: uppercase;
+  letter-spacing: 1.03px;
+  line-height: 1.2em;
+}
+
+/* Style for h1 element with gradient background text */
+h1 {
+  background: -webkit-linear-gradient(0deg, #cdcbca, aliceblue, #cdcbca, #2a3a3f);
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100% 100% !important;
+}
+
+/* Style for h2 element with gradient background text and increased font size */
+h2 {
+  background: -webkit-linear-gradient(0deg, #cdcbca, aliceblue, #cdcbca, #2a3a3f);
+  background-size: auto;
+  background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100% 100% !important;
+  font-size: 40px;
+}
+
+/* Set font size and line height for paragraphs */
+p {
+  font-size: 20px;
+  line-height: 1.4em;
+}
+
+/* Set width and padding for rows */
+.row {
+  width: 100%;
+  padding: 0 40px;
+}
